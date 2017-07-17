@@ -3,6 +3,7 @@ python:
   - '3.6'
 script: 
   - python generate.py
+  - find public
 
 deploy:
   skip_cleanup: true
