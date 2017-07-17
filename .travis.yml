@@ -1,10 +1,15 @@
 language: python
 python:
-- '3.6'
-script: generate.py
+  - '3.6'
+script: 
+  - python generate.py
 
 deploy:
+  skip_cleanup: true
+  edge: true
+  on:
+    branch: master
   provider: firebase
   token:
     secure: ZzXn8XvExBtaJqDFmgbfDvo2zGect03B28/3QpFt9wEKVGnKkVuiKdLHIbV6YmpjFPdjxJR96NShATM2BLoIEWLT10eqSXS0yE6AL0DikFxIj1IFrMDvWx4par8iO1mSrekWgqd+JHKG3UafgxUDHNOYnQwpPozPja044CinaVUtp0tJzJXPV/zYfxMktfoVbqaZeLW0Zsc+ocPBIhnhFOOKpWSbk37q/XPJWGOp4GFNW7FLoZb+mllnP/qX8PDUNIIkAceq8BEwB8cHGR9W1LiOyk0Gy2oNCf4ZqhtMtUXxjlBG+JhQx3r5nVU1a/h0qgqwbFY4rIcERW2tq0GairGFe5ggmeJCr9t42z8nj+v7RiOF1a4BA+FZHnO+q/m0G0nFYwUcEX4Pnd9ura8HbmhGMA/x0dy9L6Q5RKDWAVMtAp4nRe7BtB+royymu8Njc6Ndgdi7JOlYK15kWDMsdWrnAJd4kAz/cR7EoZYVs54Box/rJh9kRTyar8n0wGyQ8aLimMlO94v1s1IELQpuDSpEm8fwvmuTaKZLjxQ/yEEaiJMiTeqIv7DKejF6FGkeN6276YLx9lK2n0ZoYywg+JCRLn/SGQgOVrUAcGhLnhi2m6zMN5YZtANQSyy5oHgiDPSYkCy8k9D1v0TMA2n9tmTqKqPe7zVXFaGTeA+JQV4=
-  project: "ronjeltemanl"
+  message: "Build: $TRAVIS_JOB_NUMBER, commit: $TRAVIS_COMMIT_MESSAGE"
