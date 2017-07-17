@@ -8,5 +8,5 @@ with open('content.json', 'r') as f:
 with open('index.template.html', 'r') as f:
     s = Template(f.read())
     for page in j:
-        with open(page['url'], 'w') as out:
+        with open('public/'+page['url'], 'w') as out:
             out.write(s.substitute(page))
