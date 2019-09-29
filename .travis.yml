@@ -3,9 +3,9 @@ python:
   - '3.6'
 
 install:
-  - npm install -g firebase-tools@3.5.0
+  - npm install -g firebase-tools
 
-script: 
+script:
   - python generate.py
   - find public
 
